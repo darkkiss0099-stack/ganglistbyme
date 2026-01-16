@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gang Detail</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="gang-detail"></div>
+
+<script src="js/data.js"></script>
+<script>
+const params = new URLSearchParams(location.search);
+const id = parseInt(params.get("id"));
+const gang = gangs.find(g => g.id === id);
+
+document.getElementById("gang-detail").innerHTML = `
+  <h1>${gang.name}</h1>
+  <p>${gang.description}</p>
+  <a href="index.html">กลับไปหน้าแรก</a>
+`;
+</script>
+
+</body>
+</html>
